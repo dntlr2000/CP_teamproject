@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet } from 'react-native';
 import { useState } from 'react';
 import { Button, Answer, Wrong } from './myButton';
+import HSH_question from './HSH_question';
 
 const TopPage = ({ setPage, stock, page }) => {
     return <View>
@@ -28,11 +29,11 @@ const Page1 = ({ setPage, stock, setStock }) => {
 const Page2 = ({ setPage, stock, setStock }) => {
     const page = 2;
     return (
-        <View>
-            <Text style={{ width: 500, height: 50 }}> Page2 </Text>
+        <>
+            <HSH_question/>
             <Answer setPage={setPage} page={page}>정답의 반대의 반대</Answer>
             <Wrong stock={stock} setStock={setStock}>오답의 반대의 반대</Wrong>
-        </View>
+        </>
     );
 };
 
