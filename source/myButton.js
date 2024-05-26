@@ -4,8 +4,8 @@ import { useState } from 'react'
 export const Button = (props) => {
     const BasicText = 'Basic Button'
     return <View>
-        <TouchableOpacity style = {styles.basic} onPress = {props.onPress}>
-            <Text style = {styles.text}>{props.children||BasicText}</Text>
+        <TouchableOpacity style = {[styles.basic, props.style]} onPress = {props.onPress}>
+            <Text style = {[styles.text, props.textStyle]}>{props.children||BasicText}</Text>
         </TouchableOpacity>
     </View>
     }
@@ -17,7 +17,8 @@ const styles = {
         padding: 16,
         margin : 10,
         borderRadius: 8,
-        width: 150 ,
+        width: 400,
+        height: 80,
         alignItems: 'center',
         justifyContent: 'center'
     },
