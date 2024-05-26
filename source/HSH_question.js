@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, Image, TouchableOpacity, Text } from "react-native";
 
 
-export default function HSH_question() {
+export default function HSH_question({stock,setStock,page,setPage}) {
   const images = [
     require("../src/imgs/problem_img1.png"),
     require("../src/imgs/problem_img2.png"),
@@ -19,7 +19,7 @@ export default function HSH_question() {
         <View style={styles.textContainer}>
           <Text style={styles.textStyle}>
             핸들을 꽂는 부분과 모양이 같은 구멍을 찾아보자
-            {"\n\n"}
+            {"\n\n\n"}
             핸들을 터치하면 각도가 바뀝니다
           </Text>
         </View>
@@ -27,7 +27,10 @@ export default function HSH_question() {
 
       <View style={styles.answerContainer}>
         <View style={styles.imageWrapper}>
-          <TouchableOpacity onPress={() => console.log("1")}>
+          <TouchableOpacity onPress={() => {
+            console.log("1")
+            setPage(page+1)
+            }}>
             <Image source={require("../src/imgs/answer_img1.png")} style={styles.imgsize}/>             
            </TouchableOpacity>    
         </View>
@@ -39,7 +42,10 @@ export default function HSH_question() {
         </View>
 
         <View style={styles.imageWrapper}>
-          <TouchableOpacity onPress={() => console.log("3")}>  
+          <TouchableOpacity onPress={() => {
+            console.log("3")
+            setStock(stock-1)
+          }}>  
             <Image source={require("../src/imgs/answer_img3.png")} style={styles.imgsize}/>    
           </TouchableOpacity>
         </View>

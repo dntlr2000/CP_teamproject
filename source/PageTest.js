@@ -29,11 +29,9 @@ const Page1 = ({ setPage, stock, setStock }) => {
 const Page2 = ({ setPage, stock, setStock }) => {
     const page = 2;
     return (
-        <>
-            <HSH_question/>
-            <Answer setPage={setPage} page={page}>정답의 반대의 반대</Answer>
-            <Wrong stock={stock} setStock={setStock}>오답의 반대의 반대</Wrong>
-        </>
+        <View>
+            <HSH_question stock={stock} setStock={setStock} setPage={setPage} page={page}/>
+        </View>
     );
 };
 
