@@ -18,7 +18,7 @@ const TopPage = ({ setPage, stock, page }) => {
 const Page1 = ({ setPage, stock, setStock }) => {
     const page = 1;
     return (
-        <View>
+        <View style={styles.container}>
             <Text style={{ width: 500, height: 50 }}> Page1 </Text>
             <Answer setPage={setPage} page={page}>정답</Answer>
             <Wrong stock={stock} setStock={setStock}>오답</Wrong>
@@ -48,18 +48,18 @@ const Page3 = ({ setPage, stock, setStock }) => {
 export default function PageTest() {
     const [stock, setStock] = useState(3);
     const [page, setPage] = useState(1);
-
     return (
         <View style={styles.container}>
             <View style={styles.topContainer}>
                 <TopPage setPage={setPage} stock={stock} page={page}/>
             </View>
             <View style={styles.bottomContainer}>
+
                 {page === 1 && <Page1 setPage={setPage} stock={stock} setStock={setStock} />}
                 {page === 2 && <Page2 setPage={setPage} stock={stock} setStock={setStock} />}
                 {page > 2 && <Page3 setPage={setPage} stock={stock} setStock={setStock} />}
-            </View>
-        </View>
+                </View>
+        </View> 
     );
 }
 

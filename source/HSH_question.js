@@ -36,7 +36,10 @@ export default function HSH_question({stock,setStock,page,setPage}) {
         </View>
 
         <View style={styles.imageWrapper}>
-          <TouchableOpacity onPress={() => console.log("2")}> 
+          <TouchableOpacity onPress={() => {
+            console.log("2")
+            setStock(stock-1)
+            }}> 
             <Image source={require("../src/imgs/answer_img2.png")} style={styles.imgsize}/>
           </TouchableOpacity>
         </View>
@@ -73,6 +76,7 @@ const styles = StyleSheet.create({
   questionContainer: {
     flex: 1,
     flexDirection: "row",
+    backgroundColor:"#418ee6"
   },
 
   imageContainer: {
@@ -89,6 +93,7 @@ const styles = StyleSheet.create({
   answerContainer: {
     flex: 2,
     flexDirection: "row",
+    backgroundColor:"#2b49db"
   },
 
   imageWrapper: {
