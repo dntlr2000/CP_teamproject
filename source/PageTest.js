@@ -29,9 +29,12 @@ const Page1 = ({ setPage, stock, setStock }) => {
 const Page2 = ({ setPage, stock, setStock }) => {
     const page = 2;
     return (
-        <View>
+        <>
             <HSH_question stock={stock} setStock={setStock} setPage={setPage} page={page}/>
-        </View>
+
+        </>
+            
+ 
     );
 };
 
@@ -48,18 +51,14 @@ const Page3 = ({ setPage, stock, setStock }) => {
 export default function PageTest() {
     const [stock, setStock] = useState(3);
     const [page, setPage] = useState(1);
-    return (
-        <View style={styles.container}>
-            <View style={styles.topContainer}>
-                <TopPage setPage={setPage} stock={stock} page={page}/>
-            </View>
-            <View style={styles.bottomContainer}>
 
+    return ( 
+            <>
+                <TopPage stock={stock} setStock={setStock}/>
                 {page === 1 && <Page1 setPage={setPage} stock={stock} setStock={setStock} />}
                 {page === 2 && <Page2 setPage={setPage} stock={stock} setStock={setStock} />}
                 {page > 2 && <Page3 setPage={setPage} stock={stock} setStock={setStock} />}
-                </View>
-        </View> 
+            </>   
     );
 }
 
