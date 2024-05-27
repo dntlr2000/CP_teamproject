@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import {Button, Answer, Wrong} from './source/myButton'
-import PageTest from './source/PageTest'
+//import PageTest from './source/PageTest'
+import Page from './source/PageLoader'
+
 
 export default function App() {
   return (
     <View>
-      <PageTest/>
+      <Page/>
     </View>
   );
 }
