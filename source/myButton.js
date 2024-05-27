@@ -1,5 +1,5 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
-import { useState } from 'react'
+import {View, Text, StyleSheet, TouchableOpacity, TextInput} from 'react-native'
+import { useState, useEffect } from 'react'
 
 export const Button = (props) => {
     const BasicText = 'Basic Button'
@@ -24,6 +24,16 @@ const styles = {
     text: {
         fontSize: 24,
         color: 'white'
+    },
+    input: {
+        width: 400,
+        height: 80,
+        margin: 5,
+        padding: 10,
+        borderRadius: 10,
+        backgroundColor: '#CCFFFF',
+        color: '#000066',
+        fontSize: 24
     }
 }
 
@@ -44,5 +54,21 @@ export const Wrong = (props) => {
         style = {styles.white} 
         textStyle = {styles.blackText}>
             {props.children||BasicText}</Button>
+    </View>
+}
+
+export const Input = (props) => {
+    const [text, setText] = useState('')
+    useEffect(() => {
+        if (text === props.answer) { 
+            props.setPage(props.page + 1);
+        }
+    }, [text]);
+    return <View>
+        <TextInput
+            style={styles.input}
+            placeholder = {props.children||'이곳에다 입력'}
+            onChangeText={(text) => {setText(text)}}
+        />
     </View>
 }
