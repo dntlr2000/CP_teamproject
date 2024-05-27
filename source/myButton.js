@@ -10,7 +10,6 @@ export const Button = (props) => {
     </View>
     }
     
-
 const styles = {
     basic: {
         backgroundColor: '#3498db',
@@ -31,14 +30,19 @@ const styles = {
 export const Answer = (props) => {
     const BasicText = 'Answer Button'
     return <View>
-        <Button onPress={()=>props.setPage(props.page+1)}>{props.children||BasicText}</Button>
+        <Button onPress={()=>props.setPage(props.page+1)}
+        style = {props.style} 
+        textStyle = {props.textStyle}>
+            {props.children||BasicText}</Button>
     </View>
 }
 
 export const Wrong = (props) => {
     const BasicText = 'Wrong Button'
     return <View>
-        <Button onPress={()=>props.setStock(props.stock - 1)}>{props.children||BasicText}</Button>
+        <Button onPress={()=>props.setStock(props.stock - 1)}
+        style = {styles.white} 
+        textStyle = {styles.blackText}>
+            {props.children||BasicText}</Button>
     </View>
 }
-
