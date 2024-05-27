@@ -14,7 +14,7 @@ const TopPage = ({ page, setPage, stock, setStock }) => {
         <Text style={{ fontSize: 30, margin: 10}}>
             {page > 3 && '마지막 문제'}
         </Text>
-        <Text style={{ fontSize: 30, margin: 10 }}>목숨: {stock}</Text>
+        <Text style={{ fontSize: 25, padding: 10 }}>목숨: {stock}</Text>
     </View>
 }
 
@@ -55,6 +55,8 @@ const PageEnd = ({ setPage, stock, setStock }) => {
 
 const styles = StyleSheet.create({
     container: {
+        height: 1500,
+        width: 600,
         flex: 1,
         padding: 10,
     },
