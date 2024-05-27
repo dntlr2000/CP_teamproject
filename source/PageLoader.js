@@ -4,13 +4,15 @@ import { Button, Answer, Wrong } from './myButton';
 
 import {Page1_1, Page1_2} from './Page1'
 import {Page2_1, Page2_2} from './Page2'
+import {Page3_1, Page3_2} from './Page3'
 
 const TopPage = ({ page, setPage, stock, setStock }) => {
     return <View>
             {page === 1 && <Page1_1/>}
             {page === 2 && <Page2_1/>}
+            {page === 3 && <Page3_1/>}
         <Text style={{ fontSize: 30, margin: 10}}>
-            {page > 2 && '마지막 문제'}
+            {page > 3 && '마지막 문제'}
         </Text>
         <Text style={{ fontSize: 30, margin: 10 }}>목숨: {stock}</Text>
     </View>
@@ -20,7 +22,8 @@ const LowerPage = ({page, setPage, stock, setStock}) => {
     return <View>
             {page === 1 && <Page1_2 setPage={setPage} stock={stock} setStock={setStock} />}
             {page === 2 && <Page2_2 setPage={setPage} stock={stock} setStock={setStock} />}
-            {page > 2 && <PageEnd setPage={setPage} stock={stock} setStock={setStock} />}
+            {page === 3 && <Page3_2 setPage={setPage} stock={stock} setStock={setStock} />}
+            {page > 3 && <PageEnd setPage={setPage} stock={stock} setStock={setStock} />}
     </View>
 }
 
