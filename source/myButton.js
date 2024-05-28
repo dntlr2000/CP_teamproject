@@ -75,21 +75,31 @@ export const Input = (props) => {
 
 export const TimeLimit = (props) => {
     const [time, setTime] = useState(props.time)
+
+    //
+    setTimeout(() => {
+        setTime(time - 1)
+    }, 1000)
+    useEffect(() => {
+        if (time === 0) { 
+            props.setStock(props.stock - 1);
+            setTime(props.time)
+        }
+    }, [time]);
     
+    /* //테스트 중. 이후 위를 지우든 아래를 지우든 할 것.
     useEffect(() => {
         const timer = setTimeout(() => {
             setTime(prevTime => prevTime - 1)
         }, 1200);
-
         return () => clearTimeout(timer) 
     }, [time])
-
     useEffect(() => {
         if (time === 0) {
             props.setStock(props.stock = props.stock - 1) 
             setTime(props.time)
         }
     }, [time, props])
-
+    */
     return<Text style={{fontSize: 25, fontWeight: 'bold'}}> 제한 시간: {time}초 </Text>
   }
