@@ -72,3 +72,24 @@ export const Input = (props) => {
         />
     </View>
 }
+
+export const TimeLimit = (props) => {
+    const [time, setTime] = useState(props.time)
+    
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setTime(prevTime => prevTime - 1)
+        }, 1200);
+
+        return () => clearTimeout(timer) 
+    }, [time])
+
+    useEffect(() => {
+        if (time === 0) {
+            props.setStock(props.stock = props.stock - 1) 
+            setTime(props.time)
+        }
+    }, [time, props])
+
+    return<Text style={{fontSize: 25, fontWeight: 'bold'}}> 제한 시간: {time}초 </Text>
+  }
