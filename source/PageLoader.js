@@ -12,7 +12,7 @@ const TopPage = ({ page, setPage, stock, setStock }) => {
             {page === 1 && <Page1_1/>}
             {page === 2 && <Page2_1/>}
             {page === 3 && <Page3_1/>}
-            {page === 4 && <Page4_1/>}
+            {page === 4 && <Page4_1 stock = {stock} setStock = {setStock}/>}
         <Text style={{ fontSize: 30, margin: 10}}>
             {page > 4 && '마지막 문제'}
         </Text>
