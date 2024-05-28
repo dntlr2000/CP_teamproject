@@ -15,9 +15,9 @@ export const Page3_1 = ({ setPage, stock, setStock }) => {
 
     <View style={styles.textContainer}>
       <Text style={styles.textStyle}>
-        핸들을 꽂는 부분과 모양이 같은 구멍을 찾아보자
-        {"\n\n\n"}
-        핸들을 터치하면 각도가 바뀝니다
+        핸들을 꽂는 부분과{"\n"} 모양이 같은 구멍을 찾아보자
+        {"\n\n"}
+        {"<==="} 핸들을 터치하면 각도가 바뀝니다
       </Text>
     </View>
   </View>
@@ -106,6 +106,7 @@ const ImageSlider = ({ images }) => {
   
     textStyle: {
       fontSize: 20,
+      fontWeight:'bold',
       textAlign: "center",
       marginHorizontal: 20,
     },
