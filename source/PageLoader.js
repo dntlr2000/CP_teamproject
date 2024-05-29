@@ -5,14 +5,18 @@ import { Button, Answer, Wrong } from './myButton';
 import {Page1_1, Page1_2} from './Page1'
 import {Page2_1, Page2_2} from './Page2'
 import {Page3_1, Page3_2} from './Page3'
+import {Page4_1, Page4_2} from './Page4'
+import {Page5_1, Page5_2} from './Page5'
 
 const TopPage = ({ page, setPage, stock, setStock }) => {
     return <View>
             {page === 1 && <Page1_1/>}
             {page === 2 && <Page2_1/>}
             {page === 3 && <Page3_1/>}
+            {page === 4 && <Page4_1/>}
+            {page === 5 && <Page5_1/>}
         <Text style={{ fontSize: 30, margin: 10}}>
-            {page > 3 && '마지막 문제'}
+            {page > 5 && '마지막 문제'}
         </Text>
         <Text style={{ fontSize: 30, margin: 10 }}>목숨: {stock}</Text>
     </View>
@@ -23,7 +27,9 @@ const LowerPage = ({page, setPage, stock, setStock}) => {
             {page === 1 && <Page1_2 setPage={setPage} stock={stock} setStock={setStock} />}
             {page === 2 && <Page2_2 setPage={setPage} stock={stock} setStock={setStock} />}
             {page === 3 && <Page3_2 setPage={setPage} stock={stock} setStock={setStock} />}
-            {page > 3 && <PageEnd setPage={setPage} stock={stock} setStock={setStock} />}
+            {page === 4 && <Page4_2 setPage={setPage} stock={stock} setStock={setStock} />}
+            {page === 5 && <Page5_2 setPage={setPage} stock={stock} setStock={setStock} />}
+            {page > 5 && <PageEnd setPage={setPage} stock={stock} setStock={setStock} />}
     </View>
 }
 
