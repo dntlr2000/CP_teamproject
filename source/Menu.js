@@ -5,11 +5,13 @@ import { Button } from './myButton';
 export const Menu_1 = ({ setPage, stock, setStock }) => {
     const page = 0;
     return (
-        <View>
+        <View style = {{alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{ fontSize: 40, margin: 10, font:'bold'}}>
             센스 퀴즈
-        </Text>
-        <Text style={{ fontSIze: 30, margin: 10}}>크로스플랫폼 7조</Text>
+            </Text>
+            <Text style={{ fontSize: 30, margin: 10, font:'bold'}}>
+            크로스플랫폼 7조
+            </Text>
         </View>
     );
 };
