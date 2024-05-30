@@ -20,7 +20,7 @@ export const Page1_2 = ({ setPage, stock, setStock }) => {
             <Wrong stock={stock} setStock={setStock}>피가 맛있다</Wrong>
             <Wrong stock={stock} setStock={setStock}>늙지 않는다</Wrong>
             <Wrong stock={stock} setStock={setStock}>돈 많은 귀족이다</Wrong>
-            <Answer setPage={setPage} page={page}>해 피해야 한다.</Answer>
+            <Answer setPage={setPage} page={page}>해 피해야 한다</Answer>
         </View>
     );
 };
