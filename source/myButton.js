@@ -138,3 +138,13 @@ export const WrongHover = (props) => {
             {props.children||BasicText}</ButtonHover>
     </View>
 }
+
+export const FinalAnswer = (props) => {
+    const BasicText = 'Answer Button'
+    return <View>
+        <Button onPress={()=>props.setStock(0)}
+        style = {props.style} 
+        textStyle = {props.textStyle}>
+            {props.children||BasicText}</Button>
+    </View>
+}
