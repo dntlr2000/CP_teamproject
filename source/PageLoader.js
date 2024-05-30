@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Button, Answer, Wrong, FinalAnswer } from './myButton';
 
 import { Menu_1, Menu_2 } from './Menu';
-
 import {Page1_1, Page1_2} from './Page1'
 import {Page2_1, Page2_2} from './Page2'
 import {Page3_1, Page3_2} from './Page3'
@@ -73,10 +72,12 @@ export default function Page() {
 
 const styles = StyleSheet.create({
     container: {
-        height: 1500,
-        width: 600,
+        height: 900,
+        width: 620,
         flex: 1,
         padding: 10,
+        justifyContent: 'center',
+        //flexDirection: 'row'
     },
     topContainer: {
         flex: 1,
