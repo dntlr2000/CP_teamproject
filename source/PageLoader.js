@@ -72,22 +72,27 @@ export default function Page() {
 
 const styles = StyleSheet.create({
     container: {
+        margin: 10,
         height: 900,
         width: 620,
         flex: 1,
-        padding: 10,
+        padding: 2,
         justifyContent: 'center',
         //flexDirection: 'row'
+        borderWidth: 2,
+        borderColor:'black'
     },
     topContainer: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#FFCCCC'
+        //backgroundColor: '#FFCCCC',
+        borderBottomWidth: 2,
+        borderBottomColor: 'black'
     },
     bottomContainer: {
         flex: 2,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#CCCCFF'
+        backgroundColor: '#CCCCFF',
     }
 });
