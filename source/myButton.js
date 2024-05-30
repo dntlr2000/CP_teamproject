@@ -89,7 +89,7 @@ export const TimeLimit = (props) => {
         }
     }, [time]);
 
-    return<Text style={{fontSize: 25, fontWeight: 'bold'}}>제한 시간: {time}초</Text>
+    return<Text style={{fontSize: 25, fontWeight: 'bold'}}>  제한 시간: {time}초</Text>
   }
 
   //일단은 1회용으로 만들었으나 재활용이나 위에 덮어쓸 가능성이 있으므로 이 밑에다 생성
