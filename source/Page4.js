@@ -1,21 +1,15 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
-import { Button, Answer, Wrong } from './myButton';
-import problem_img4 from "./imgs/problem_img4.png";
+import { Text, View, StyleSheet } from 'react-native';
+//import { useState } from 'react';
+import { Input, TimeLimit } from './myButton';
 
 export const Page4_1 = ({ setPage, stock, setStock }) => {
     const page = 4;
     return (
         <View>
-            <Text style={{ fontSize: 30, margin: 10 }}>
-                문제 4: 정답을 구하여라!
-            </Text>
-            {page === 4 && (
-                <Image
-                    source={problem_img4}
-                    style={{ width: 300, height: 100 }}
-                />
-            )}
+            <Text style={{ fontSize: 30, margin: 10}}>
+             비밀번호를 입력해라! 
+        </Text>
+        <TimeLimit time={9} stock = {stock} setStock={setStock}/>
         </View>
     );
 };
@@ -23,15 +17,9 @@ export const Page4_1 = ({ setPage, stock, setStock }) => {
 export const Page4_2 = ({ setPage, stock, setStock }) => {
     const page = 4;
     return (
-        <View style={{ padding: 20 }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10 }}>
-                <Wrong stock={stock} setStock={setStock} style={{ width: '48%' }}>13</Wrong>
-                <Wrong stock={stock} setStock={setStock} style={{ width: '48%' }}>14</Wrong>
-            </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Answer setPage={setPage} page={page} style={{ width: '48%' }}>12</Answer>
-                <Wrong stock={stock} setStock={setStock} style={{ width: '48%' }}>15</Wrong>
-            </View>
+        <View>
+            <Text style = {{fontSize: 20}}>password: 34 / (9 + 12) - 28 + 882 - 12 {'\n\n'} </Text>
+            <Input setPage={setPage} page={page} answer = '비밀번호'>비밀번호를 입력하세요.</Input>
         </View>
     );
 };
