@@ -34,6 +34,10 @@ const styles = {
         backgroundColor: '#CCFFFF',
         color: '#000066',
         fontSize: 24
+    },
+
+    hoverColor: {
+        backgroundColor: '#CC99FF'
     }
 }
 
@@ -51,8 +55,8 @@ export const Wrong = (props) => {
     const BasicText = 'Wrong Button'
     return <View>
         <Button onPress={()=>props.setStock(props.stock - 1)}
-        style = {styles.white} 
-        textStyle = {styles.blackText}>
+        style = {props.style} 
+        textStyle = {props.textStyle}>
             {props.children||BasicText}</Button>
     </View>
 }
@@ -75,8 +79,6 @@ export const Input = (props) => {
 
 export const TimeLimit = (props) => {
     const [time, setTime] = useState(props.time)
-
-    //
     setTimeout(() => {
         setTime(time - 1)
     }, 1000)
@@ -86,20 +88,53 @@ export const TimeLimit = (props) => {
             setTime(props.time)
         }
     }, [time]);
-    
-    /* //테스트 중. 이후 위를 지우든 아래를 지우든 할 것.
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setTime(prevTime => prevTime - 1)
-        }, 1200);
-        return () => clearTimeout(timer) 
-    }, [time])
-    useEffect(() => {
-        if (time === 0) {
-            props.setStock(props.stock = props.stock - 1) 
-            setTime(props.time)
-        }
-    }, [time, props])
-    */
-    return<Text style={{fontSize: 25, fontWeight: 'bold'}}> 제한 시간: {time}초 </Text>
+
+    return<Text style={{fontSize: 25, fontWeight: 'bold'}}>제한 시간: {time}초</Text>
   }
+
+  //일단은 1회용으로 만들었으나 재활용이나 위에 덮어쓸 가능성이 있으므로 이 밑에다 생성
+  export const ButtonHover = (props) => {
+    const BasicText = 'Basic Button(Hover)'
+    const [hovered, setHovered] = useState(false)
+
+    const handleMouseEnter = () => {
+        setHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setHovered(false);
+    };
+
+    return <View>
+        <TouchableOpacity 
+        style = {[styles.basic, props.style, hovered && props.hoverStyle]} 
+        onPress = {props.onPress}
+        onMouseEnter = {handleMouseEnter}
+        onMouseLeave = {handleMouseLeave}
+        >
+            <Text style = {[styles.text, props.textStyle]}>{props.children||BasicText}</Text>
+        </TouchableOpacity>
+    </View>
+    }
+
+  export const AnswerHover = (props) => {
+    const BasicText = 'Answer Button(Hover)'
+    return <View>
+        <ButtonHover onPress={()=>props.setPage(props.page+1)}
+        style = {props.style} 
+        textStyle = {props.textStyle}
+        hoverStyle =  {props.hoverStyle}>
+            {props.children||BasicText}</ButtonHover>
+    </View>
+}
+
+export const WrongHover = (props) => {
+    const BasicText = 'Wrong Button(Hover)'
+    return <View>
+        <ButtonHover onPress={()=>props.setStock(props.stock - 1)}
+        style = {props.style} 
+        textStyle = {props.textStyle}
+        hoverStyle =  {props.hoverStyle}>
+            {props.children||BasicText}</ButtonHover>
+    </View>
+}
