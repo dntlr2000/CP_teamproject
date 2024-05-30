@@ -4,7 +4,7 @@ import { Button } from './myButton';
 
 export const Over_1 = ({ setPage, stock, setStock }) => {
     return (
-        <View>
+        <View style = {{alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{ fontSize: 30, margin: 10}}>
             게임 오버
         </Text>
