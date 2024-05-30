@@ -20,7 +20,7 @@ export const Page7_2 = ({ setPage, stock, setStock }) => {
             <Wrong stock={stock} setStock={setStock}>버튼</Wrong>
             <Wrong stock={stock} setStock={setStock} style={styles.green}>버튼</Wrong>
             <WrongHover stock={stock} setStock={setStock} style={styles.black} hoverStyle={styles.purple}>버튼</WrongHover>
-            <AnswerHover setPage={setPage} page={page} style = {styles.purple} textStyle = {styles.blackText} hoverStyle={styles.black}>버튼</AnswerHover>
+            <AnswerHover setPage={setPage} page={page} style = {styles.purple} hoverStyle={styles.black}>버튼</AnswerHover>
         </View>
     );
 };
