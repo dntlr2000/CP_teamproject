@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TouchableOpacity, TextInput} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity, TextInput, Switch } from 'react-native'
 import { useState, useEffect } from 'react'
 
 export const Button = (props) => {
@@ -92,6 +92,13 @@ export const TimeLimit = (props) => {
     return<Text style={{fontSize: 25, fontWeight: 'bold'}}>  제한 시간: {time}초</Text>
   }
 
+  export const BoolSwitch = (props) => {
+    const _toggleSwitch = () => props.setIsTrue(!props.isTrue);
+    return <View>
+        <Switch value = {props.isTrue} onValueChange={_toggleSwitch}/>
+    </View>
+  }
+
   //일단은 1회용으로 만들었으나 재활용이나 위에 덮어쓸 가능성이 있으므로 이 밑에다 생성
   export const ButtonHover = (props) => {
     const BasicText = 'Basic Button(Hover)'
@@ -140,9 +147,14 @@ export const WrongHover = (props) => {
 }
 
 export const FinalAnswer = (props) => {
-    const BasicText = 'Answer Button'
+    const BasicText = 'Final Button'
+    const toEnd = () => {
+        props.setPage(props.page + 1)
+        props.setStock(0)
+    }
+
     return <View>
-        <Button onPress={()=>props.setStock(0)}
+        <Button onPress={toEnd}
         style = {props.style} 
         textStyle = {props.textStyle}>
             {props.children||BasicText}</Button>
