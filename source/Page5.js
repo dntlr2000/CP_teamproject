@@ -10,6 +10,7 @@ export const Page5_1 = ({ setPage, stock, setStock }) => {
              시간이 없다! 빨리 1을 찾아서 눌러라!
         </Text>
         <TimeLimit time={5} page = {page} setPage = {setPage} stock = {stock} setStock={setStock}/>
+        <TempText page = {page} setPage = {setPage} stock = {stock} setStock={setStock}/>
         </View>
     );
 };
@@ -29,7 +30,7 @@ export const Page5_2 = ({ setPage, stock, setStock }) => {
 };
 
 //1회용으로 사용할 컴포넌트이기에 myButton이 아니라 여기서 정의
-export const TimeLimit = (props) => {
+const TimeLimit = (props) => {
     const [time, setTime] = useState(props.time)
     setTimeout(() => {
         setTime(time - 1)
@@ -40,7 +41,6 @@ export const TimeLimit = (props) => {
             setTime(props.time)
         }
     }, [time]);
-
     const clicked = () => {
         if (time === 1) {
             props.setPage(props.page + 1);
@@ -49,8 +49,21 @@ export const TimeLimit = (props) => {
             props.setStock(props.stock - 1);
         }
     }
-
     return<TouchableOpacity onPress={clicked}>
-        <Text style={{fontSize: 25, fontWeight: 'bold'}}>제한 시간: {time}초</Text>
+        <Text style={{fontSize: 25, fontWeight: 'bold'}}>  제한 시간: {time}초</Text>
+    </TouchableOpacity>
+  }
+
+  const TempText = (props) => {
+    const clicked = () => {
+        if (props.stock === 1) {
+            props.setPage(props.page + 1);
+        }
+        else {
+            props.setStock(props.stock - 1);
+        }
+    } 
+    return <TouchableOpacity onPress={clicked}>
+        <Text style={{ fontSize: 25, padding: 10 }}>목숨: {props.stock}</Text>
     </TouchableOpacity>
   }
